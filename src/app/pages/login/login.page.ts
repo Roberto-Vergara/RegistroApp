@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
   public ingresar():void{
     this.usuario.llenarUsuariosValidos();
     if(this.usuario.validarUsuario(this.usuario)){
-      this.router.navigate(['/home']);
+      this.router.navigate(['/inicio']);
     }else{
       console.log("no pasa");
     }
