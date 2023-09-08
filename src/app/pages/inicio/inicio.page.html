@@ -1,10 +1,19 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title #titulo class="ion-text-left ion-text">
-      <div>
-        SkeletonAPP
-      </div>
-    </ion-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3 col-md-6>
+          <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/2560px-Logo_DuocUC.svg.png">
+        </ion-col>
+        <ion-col col-9 col-md-6>
+          <ion-title #titulo class="ion-text-left ion-text">
+            <div>
+              <h1>Sistema de asistencia DUOC</h1>
+            </div>
+          </ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
@@ -23,18 +32,64 @@
   <video #video [hidden]="!escaneando" width="100%"></video>
   <canvas #canvas hidden></canvas>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Los datos del Código QR son los siguientes:</ion-card-title>
-    </ion-card-header>
-    <ion-card-content class="borde">
-      <h2 *ngIf="datosQR">
-        {{ datosQR }}
-      </h2>
-      <h2 *ngIf="!datosQR">
-        Sin información
-      </h2>
-    </ion-card-content>
-  </ion-card>
-  
+  <ion-grid class="datinf">
+    <ion-row>
+      <ion-col col-md-3>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Los datos del CÃ³digo QR son los siguientes:</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col col-9 col-md-9>
+        <ion-card>
+          <ion-card-content class="borde">
+            <table>
+              <tr>
+                <td class="columna_titulos">Bloque de Inicio</td>
+                <td>{{bloqueInicio}}</td>
+              <tr>
+              <tr>
+                <td>Bloque de Termino</td>
+                <td>{{bloqueTermino}}</td>
+              <tr>
+              <tr>
+                <td>Dia</td>
+                <td>{{dia}}</td>
+              <tr>
+              <tr>
+                <td>Hora de Fin</td>
+                <td>{{horaFin}}</td>
+              <tr>
+              <tr>
+                <td>Hora de Inicio</td>
+                <td>{{horaInicio}}</td>
+              <tr>
+              <tr>
+                <td>Sigla</td>
+                <td>{{idAsignatura}}</td>
+              <tr>
+              <tr>
+                <td>Nombre de Asignatura</td>
+                <td>{{nombreAsignatura}}</td>
+              <tr>
+              <tr>
+                <td>Nombre de Profesor</td>
+                <td>{{nombreProfesor}}</td>
+              <tr>
+              <tr>
+                <td>Seccion</td>
+                <td>{{seccion}}</td>
+              <tr>
+              <tr>
+                <td>Sede</td>
+                <td>{{sede}}</td>
+              <tr>
+            </table>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

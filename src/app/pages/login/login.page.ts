@@ -20,7 +20,7 @@ export class LoginPage implements OnInit {
 
 
   constructor(private router:Router,private toastController:ToastController) {
-    this.usuario= new Usuario("","");
+    this.usuario= new Usuario("","","","","");
     this.email="as";
     this.password="as";
     this.usuario.setUsuario('atorres@duocuc.cl', '1234');
