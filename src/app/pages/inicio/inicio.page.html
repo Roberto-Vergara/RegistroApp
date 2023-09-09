@@ -32,57 +32,72 @@
   <video #video [hidden]="!escaneando" width="100%"></video>
   <canvas #canvas hidden></canvas>
 
-  <ion-grid class="datinf">
+  <ion-grid class="TitDat">
     <ion-row>
       <ion-col col-md-3>
         <ion-card>
           <ion-card-header>
-            <ion-card-title>Los datos del CÃ³digo QR son los siguientes:</ion-card-title>
+            <ion-card-title>Los datos del Codigo QR son los siguientes</ion-card-title>
           </ion-card-header>
         </ion-card>
       </ion-col>
-      <ion-col col-9 col-md-9>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="infDat">
+    <ion-row>
+      <ion-col col-6 col-md-6>
         <ion-card>
           <ion-card-content class="borde">
             <table>
               <tr>
                 <td class="columna_titulos">Bloque de Inicio</td>
-                <td>{{bloqueInicio}}</td>
-              <tr>
               <tr>
                 <td>Bloque de Termino</td>
-                <td>{{bloqueTermino}}</td>
-              <tr>
               <tr>
                 <td>Dia</td>
-                <td>{{dia}}</td>
-              <tr>
               <tr>
                 <td>Hora de Fin</td>
-                <td>{{horaFin}}</td>
-              <tr>
               <tr>
                 <td>Hora de Inicio</td>
-                <td>{{horaInicio}}</td>
-              <tr>
               <tr>
                 <td>Sigla</td>
-                <td>{{idAsignatura}}</td>
-              <tr>
               <tr>
                 <td>Nombre de Asignatura</td>
-                <td>{{nombreAsignatura}}</td>
-              <tr>
               <tr>
                 <td>Nombre de Profesor</td>
-                <td>{{nombreProfesor}}</td>
-              <tr>
               <tr>
                 <td>Seccion</td>
-                <td>{{seccion}}</td>
-              <tr>
               <tr>
                 <td>Sede</td>
+              <tr>
+            </table>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6 col-md-6>
+        <ion-card>
+          <ion-card-content class="borde2">
+            <table>
+              <tr>
+                <td>{{bloqueInicio}}</td>
+              <tr>
+                <td>{{bloqueTermino}}</td>
+              <tr>
+                <td>{{dia}}</td>
+              <tr>
+                <td>{{horaFin}}</td>
+              <tr>
+                <td>{{horaInicio}}</td>
+              <tr>
+                <td>{{idAsignatura}}</td>
+              <tr>
+                <td>{{nombreAsignatura}}</td>
+              <tr>
+                <td>{{nombreProfesor}}</td>
+              <tr>
+                <td>{{seccion}}</td>
+              <tr>
                 <td>{{sede}}</td>
               <tr>
             </table>
@@ -91,5 +106,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
 </ion-content>

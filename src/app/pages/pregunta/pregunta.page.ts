@@ -1,4 +1,4 @@
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router,NavigationExtras } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 
@@ -32,10 +32,15 @@ export class PreguntaPage implements OnInit {
 
   public validarRespuestaSecreta(): void {
     if (this.usuario.respuestaSecreta === this.respuesta) {
-      alert('CORRECTO!!! TU CLAVE ES ' + this.usuario.password);
+      const navigationExtras: NavigationExtras = {
+        state: {
+          password: this.usuario.password
+        }
+      };
+      this.router.navigate(['/correcto'],navigationExtras);
     }
     else {
-      alert('INCORRECTO!!!');
+      this.router.navigate(['/incorrecto']);
     }
   }
 

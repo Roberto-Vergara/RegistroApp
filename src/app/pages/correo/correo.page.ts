@@ -24,7 +24,6 @@ export class CorreoPage implements OnInit {
       alert('EL CORREO NO EXISTE DENTRO DE LAS CUENTAS VALIDAS DEL SISTEMA');
     }
     else {
-      alert('usuario encontrado');
       const navigationExtras: NavigationExtras = {
         state: {
           usuario: usuarioEncontrado
