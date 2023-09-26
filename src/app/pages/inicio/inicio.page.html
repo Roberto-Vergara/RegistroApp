@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3 col-md-6>
+          <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/2560px-Logo_DuocUC.svg.png">
+        </ion-col>
+        <ion-col col-9 col-md-6>
+          <ion-title #titulo class="ion-text-left ion-text">
+            <div>
+              <h1>Sistema de asistencia DUOC</h1>
+            </div>
+          </ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-button *ngIf="!escaneando" (click)="comenzarEscaneoQR()" expand="full" shape="round">
+    <ion-icon slot="start" name="videocam-outline"></ion-icon>
+    Comenzar Escaneo de QR
+  </ion-button>
+
+  <ion-button *ngIf="escaneando" (click)="detenerEscaneoQR()" expand="full" shape="round">
+    <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+    Detener escaneo de QR
+  </ion-button>
+
+  <video #video [hidden]="!escaneando" width="100%"></video>
+  <canvas #canvas hidden></canvas>
+
+  <ion-grid class="TitDat">
+    <ion-row>
+      <ion-col col-md-3>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Los datos del Codigo QR son los siguientes</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="infDat">
+    <ion-row>
+      <ion-col col-6 col-md-6>
+        <ion-card>
+          <ion-card-content class="borde">
+            <table>
+              <tr>
+                <td class="columna_titulos">Bloque de Inicio</td>
+              <tr>
+                <td>Bloque de Termino</td>
+              <tr>
+                <td>Dia</td>
+              <tr>
+                <td>Hora de Fin</td>
+              <tr>
+                <td>Hora de Inicio</td>
+              <tr>
+                <td>Sigla</td>
+              <tr>
+                <td>Nombre de Asignatura</td>
+              <tr>
+                <td>Nombre de Profesor</td>
+              <tr>
+                <td>Seccion</td>
+              <tr>
+                <td>Sede</td>
+              <tr>
+            </table>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6 col-md-6>
+        <ion-card>
+          <ion-card-content class="borde2">
+            <table>
+              <tr>
+                <td>{{bloqueInicio}}</td>
+              <tr>
+                <td>{{bloqueTermino}}</td>
+              <tr>
+                <td>{{dia}}</td>
+              <tr>
+                <td>{{horaFin}}</td>
+              <tr>
+                <td>{{horaInicio}}</td>
+              <tr>
+                <td>{{idAsignatura}}</td>
+              <tr>
+                <td>{{nombreAsignatura}}</td>
+              <tr>
+                <td>{{nombreProfesor}}</td>
+              <tr>
+                <td>{{seccion}}</td>
+              <tr>
+                <td>{{sede}}</td>
+              <tr>
+            </table>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
