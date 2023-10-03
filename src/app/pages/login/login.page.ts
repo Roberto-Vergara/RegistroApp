@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import {Router, NavigationExtras} from "@angular/router";
 import { ToastController } from '@ionic/angular';
+import { DatabaseService } from 'src/app/services/database.service';
 // el NavigationExtras sirve para pasar parametros
 
 @Component({
@@ -19,16 +20,16 @@ export class LoginPage implements OnInit {
 
 
 
-  constructor(private router:Router,private toastController:ToastController) {
+  constructor(private router:Router,private toastController:ToastController,) {
     this.usuario= new Usuario("","","","","");
     this.email="as";
     this.password="as";
     this.usuario.setUsuario('atorres@duocuc.cl', '1234');
-    
    }
 
   ngOnInit() {
   }
+
 
   public ingresar():void{
     this.usuario.llenarUsuariosValidos();
