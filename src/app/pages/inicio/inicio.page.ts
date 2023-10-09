@@ -4,6 +4,7 @@ import { Asistencia } from "src/app/models/asistencia";
 import jsQR from 'jsqr';
 import { QRCode } from 'jsqr';
 import { Animation, AnimationController} from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -35,7 +36,20 @@ export class InicioPage implements OnInit, AfterViewInit  {
   public seccion: string = '';
   public sede: string = '';
 
-  public constructor(private animationController:AnimationController ) {
+  public nombreUsuario:string="";
+
+  public constructor(private animationController:AnimationController,private activateRoute:ActivatedRoute,private router:Router ) {
+
+    this.activateRoute.queryParams.subscribe(params=>{
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.nombreUsuario = this.router.getCurrentNavigation().extras.state.nombre;
+        console.log(this.nombreUsuario);
+        
+      }else{
+        this.nombreUsuario="no cargado"
+      }
+
+    })
   }
   
 

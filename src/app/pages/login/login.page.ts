@@ -34,9 +34,19 @@ export class LoginPage implements OnInit {
   public ingresar():void{
     this.usuario.llenarUsuariosValidos();
     if(this.usuario.validarUsuario(this.usuario)){
-      this.router.navigate(['/inicio']);
+      // enviar parametros
+      const navigationExtras:NavigationExtras={
+        state:{
+          nombre:this.usuario.email
+        }
+      }
+      this.router.navigate(['/inicio'],navigationExtras);
     }else{
-      console.log("no pasa");
+      this.toastController.create({
+        duration:2000,
+        position:"bottom",
+        message:"usuario invalido"
+      }).then(e=>e.present())
     }
     
   }

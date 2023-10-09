@@ -11,6 +11,7 @@ import { Usuario } from 'src/app/models/usuario';
 export class PreguntaPage implements OnInit {
 
   public usuario: Usuario;
+  public preguntaSecreta:String;
   public respuesta: String = '';
 
   constructor(
@@ -21,6 +22,7 @@ export class PreguntaPage implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.usuario = this.router.getCurrentNavigation().extras.state.usuario;
+        this.preguntaSecreta=this.usuario.preguntaSecreta;
       } else {
         this.router.navigate(['/login']);
       }
@@ -42,6 +44,10 @@ export class PreguntaPage implements OnInit {
     else {
       this.router.navigate(['/incorrecto']);
     }
+  }
+
+  public volverInicio():void{
+    this.router.navigate(['/login'])
   }
 
 }

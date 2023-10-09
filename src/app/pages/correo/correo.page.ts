@@ -34,14 +34,16 @@ export class CorreoPage implements OnInit {
       // usar su metodo, con el async y await esperamos el resultado lo asignamos a una variable y esa variable contiene los
       // metodos y ahi usamos el present()
 
-      const asa= await this.toastController.create({
-        message:'EL CORREO NO EXISTE DENTRO DE LAS CUENTAS VALIDAS DEL SISTEMA',
-        position:"middle",
-        duration:2000
-      });
-      asa.present();
+      // const asa= await this.toastController.create({
+      //   message:'EL CORREO NO EXISTE DENTRO DE LAS CUENTAS VALIDAS DEL SISTEMA',
+      //   position:"middle",
+      //   duration:2000
+      // });
+      // asa.present();
 
       // 2 formas de promesas diferentes
+
+      this.router.navigate(['/incorrecto'])
     }
     else {
       const navigationExtras: NavigationExtras = {
@@ -51,6 +53,10 @@ export class CorreoPage implements OnInit {
       };
       this.router.navigate(['/pregunta'], navigationExtras);
     }
+  }
+
+  public volverInicio():void{
+    this.router.navigate(['/login'])
   }
 
 }
